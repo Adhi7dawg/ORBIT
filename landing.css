@@ -1,0 +1,623 @@
+/* ==========================================================================
+   ORBIT — Art-Directed Cosmic & Swiss Editorial Landing Styles
+   ========================================================================== */
+
+.landing-body {
+  background-color: #110722;
+  color: #FFFFFF;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Top Navigation Bar */
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 2.5rem;
+}
+
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #FFFFFF;
+}
+
+.brand-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.brand-name span {
+  color: #B5FF7D;
+}
+
+.brand-descriptor {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #B7A4D1;
+  padding-left: 0.65rem;
+  border-left: 1px solid rgba(200, 165, 240, 0.25);
+}
+
+.landing-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #D4C7E8;
+  transition: color 0.18s ease;
+}
+
+.nav-link:hover {
+  color: #FFFFFF;
+}
+
+.btn-nav-solid {
+  background-color: #FFFFFF;
+  color: #120722;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: 6px;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.btn-nav-solid:hover {
+  background-color: #E7D6FA;
+  transform: translateY(-1px);
+}
+
+/* Main Container */
+.landing-main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+/* ==========================================================================
+   HERO STAGE (Framed Cosmic Illustration + Editorial Overlay)
+   ========================================================================== */
+.hero-stage-wrapper {
+  margin-bottom: 6rem;
+}
+
+.hero-cosmic-canvas {
+  position: relative;
+  width: 100%;
+  min-height: 680px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(200, 165, 240, 0.22);
+  background-color: #18092E;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 32px 80px rgba(7, 2, 16, 0.65);
+}
+
+.cosmic-illustration {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle Film Grain & Atmospheric Vignette */
+.cosmic-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.cosmic-lighting {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 48%, rgba(18, 7, 34, 0.18) 0%, rgba(13, 5, 26, 0.62) 100%);
+}
+
+/* Foreground Editorial Typography Layer */
+.hero-content-layer {
+  position: relative;
+  z-index: 4;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5.5rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-meta-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: #D8C2F5;
+  background: rgba(18, 7, 34, 0.55);
+  border: 1px solid rgba(200, 165, 240, 0.25);
+  padding: 0.4rem 0.95rem;
+  border-radius: 4px;
+}
+
+.meta-code {
+  color: #B5FF7D;
+  font-weight: 700;
+}
+
+.meta-divider {
+  width: 1px;
+  height: 12px;
+  background: rgba(200, 165, 240, 0.35);
+}
+
+.hero-title {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: clamp(2.4rem, 5.2vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  color: #FFFFFF;
+  text-shadow: 0 8px 32px rgba(12, 4, 24, 0.75);
+  margin-bottom: 2.25rem;
+}
+
+.hero-cta-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.btn-mission-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #130824;
+  color: #FFFFFF;
+  border: 1px solid rgba(200, 165, 240, 0.45);
+  padding: 0.65rem 0.75rem 0.65rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  letter-spacing: -0.01em;
+  box-shadow: 0 12px 30px rgba(8, 3, 18, 0.65);
+  transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-mission-cta:hover {
+  background-color: #1F0D3B;
+  border-color: #B5FF7D;
+  transform: translateY(-2px);
+}
+
+.cta-icon-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.btn-mission-cta:hover .cta-icon-circle {
+  background-color: #B5FF7D;
+}
+
+.hero-subnote {
+  max-width: 540px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #DFD3F2;
+  text-shadow: 0 2px 12px rgba(10, 4, 20, 0.85);
+}
+
+.hero-bottom-telemetry {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 2rem;
+  right: 2rem;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: rgba(216, 194, 245, 0.65);
+  border-top: 1px solid rgba(200, 165, 240, 0.14);
+  padding-top: 0.85rem;
+}
+
+/* ==========================================================================
+   EDITORIAL SWISS FEATURE SPECIFICATIONS (Asymmetric Grid)
+   ========================================================================== */
+.editorial-section {
+  padding: 2rem 0 6.5rem 0;
+}
+
+.section-grid-header {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: 2rem;
+  align-items: end;
+  margin-bottom: 3rem;
+}
+
+.mono-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: #B5FF7D;
+  display: inline-block;
+}
+
+.editorial-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.85rem, 3.2vw, 2.85rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+}
+
+.editorial-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(200, 165, 240, 0.2);
+}
+
+.editorial-row {
+  display: grid;
+  grid-template-columns: 1.2fr 3.3fr 5.5fr 2fr;
+  gap: 2rem;
+  align-items: start;
+  padding: 2.75rem 0;
+  transition: background-color 0.2s ease;
+}
+
+.row-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #C8A5F0;
+  letter-spacing: -0.04em;
+}
+
+.row-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.row-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: #9A84BA;
+}
+
+.row-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+}
+
+.row-body p {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #C7B9DC;
+  max-width: 520px;
+}
+
+.row-meta {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.spec-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: #E2D4F7;
+  border: 1px solid rgba(200, 165, 240, 0.28);
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   ASYMMETRIC ARCHITECTURE BAND
+   ========================================================================== */
+.architecture-band {
+  border-top: 1px solid rgba(200, 165, 240, 0.22);
+  border-bottom: 1px solid rgba(200, 165, 240, 0.22);
+  padding: 5rem 0;
+  margin-bottom: 4rem;
+}
+
+.arch-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.arch-left .mono-tag {
+  margin-bottom: 1.25rem;
+}
+
+.arch-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.arch-copy {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #C7B9DC;
+  margin-bottom: 2.25rem;
+}
+
+.arch-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(200, 165, 240, 0.18);
+  border-bottom: 1px solid rgba(200, 165, 240, 0.18);
+  margin-bottom: 2.25rem;
+}
+
+.arch-spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.spec-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: #9A84BA;
+}
+
+.spec-val {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.btn-arch-launch {
+  display: inline-block;
+  background-color: #C8A5F0;
+  color: #120722;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.95rem 1.75rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-arch-launch:hover {
+  background-color: #B5FF7D;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   EDITORIAL FOOTER
+   ========================================================================== */
+.landing-footer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2.5rem 2.5rem 3.5rem 2.5rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+}
+
+.footer-sub {
+  font-size: 0.85rem;
+  color: #9A84BA;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.footer-links a {
+  font-size: 0.85rem;
+  color: #C7B9DC;
+  transition: color 0.15s ease;
+}
+
+.footer-links a:hover {
+  color: #FFFFFF;
+}
+
+.footer-copy {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #836FA3;
+}
+
+/* ==========================================================================
+   DEDICATED MOBILE & TABLET COMPOSITION
+   ========================================================================== */
+@media (max-width: 960px) {
+  .section-grid-header,
+  .arch-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .editorial-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+
+  .row-meta {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .landing-header {
+    padding: 1.15rem 1.25rem;
+  }
+
+  .brand-descriptor,
+  .nav-link {
+    display: none;
+  }
+
+  .btn-nav-solid {
+    padding: 0.55rem 1rem;
+    font-size: 0.82rem;
+  }
+
+  .landing-main {
+    padding: 0 1.25rem;
+  }
+
+  .hero-stage-wrapper {
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-cosmic-canvas {
+    min-height: 540px;
+    border-radius: 12px;
+    justify-content: flex-end;
+  }
+
+  .cosmic-illustration {
+    object-position: 68% 22%;
+  }
+
+  .cosmic-lighting {
+    background: linear-gradient(
+      180deg,
+      rgba(17, 7, 34, 0.25) 0%,
+      rgba(17, 7, 34, 0.65) 45%,
+      rgba(17, 7, 34, 0.94) 100%
+    );
+  }
+
+  .hero-content-layer {
+    padding: 11rem 1.25rem 3.75rem 1.25rem;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero-meta-bar {
+    font-size: 0.68rem;
+    padding: 0.35rem 0.7rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.05rem;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-cta-row {
+    align-items: stretch;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .btn-mission-cta {
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.65rem 0.75rem 0.65rem 1.15rem;
+  }
+
+  .hero-subnote {
+    font-size: 0.88rem;
+  }
+
+  .hero-bottom-telemetry {
+    left: 1.25rem;
+    right: 1.25rem;
+    bottom: 0.85rem;
+    font-size: 0.62rem;
+  }
+
+  .hero-bottom-telemetry span:nth-child(2) {
+    display: none;
+  }
+
+  .editorial-section {
+    padding: 1rem 0 4rem 0;
+  }
+
+  .arch-specs {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .btn-arch-launch {
+    width: 100%;
+    text-align: center;
+  }
+
+  .landing-footer {
+    padding: 2rem 1.25rem 2.75rem 1.25rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+  }
+}

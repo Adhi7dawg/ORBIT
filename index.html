@@ -9,69 +9,391 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="landing-body">
-    <div class="space-background">
-        <div class="starfield"></div>
-        <div class="nebula-glow"></div>
-    </div>
 
+    <!-- Top Swiss Navigation Bar -->
     <header class="landing-header">
-        <div class="logo">ORBIT<span>.</span></div>
-        <nav class="landing-nav">
-            <a href="#features">Fitur</a>
-            <a href="#about">Tentang</a>
-            <a href="dashboard.html" class="btn-secondary-glass">Masuk</a>
+        <a href="index.html" class="brand-lockup" aria-label="ORBIT Home">
+            <svg class="brand-glyph" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="9.5" stroke="#C8A5F0" stroke-width="1.5" stroke-dasharray="3 2.5"/>
+                <circle cx="12" cy="12" r="4" fill="#FFFFFF"/>
+                <circle cx="19.5" cy="6.5" r="2" fill="#B5FF7D"/>
+            </svg>
+            <span class="brand-name">ORBIT</span>
+            <span class="brand-descriptor">Finance OS</span>
+        </a>
+
+        <nav class="landing-nav" aria-label="Main Navigation">
+            <a href="#features" class="nav-link">Capabilities</a>
+            <a href="#architecture" class="nav-link">Architecture</a>
+            <a href="dashboard.html" class="btn-nav-solid">Enter Dashboard</a>
         </nav>
     </header>
 
     <main class="landing-main">
-        <section class="hero-section">
-            <div class="hero-container">
-                <div class="badge-pill">Sistem Keuangan Masa Depan</div>
-                <h1 class="hero-title">
-                    Take Control of Your Money.<br>
-                    Navigate Your Financial Future.
-                </h1>
-                <p class="hero-subtitle">
-                    A smarter way to understand your spending, organize your finances, and navigate your financial future.
-                </p>
-                <div class="hero-actions">
-                    <a href="dashboard.html" class="btn-primary-space">Enter Your Dashboard</a>
-                </div>
-            </div>
-            
-            <div class="hero-visual-container">
-                <div class="astronaut-helmet-card">
-                    <div class="cosmic-ring"></div>
-                    <div class="glass-orb">
-                        <div class="orb-inner"></div>
+        <!-- HERO STAGE: Framed Cosmic Art Direction + Editorial Typography -->
+        <section class="hero-stage-wrapper" aria-labelledby="hero-heading">
+            <div class="hero-cosmic-canvas">
+                <!-- Atmospheric Grain & Vignette Overlay -->
+                <div class="cosmic-grain" aria-hidden="true"></div>
+                <div class="cosmic-lighting" aria-hidden="true"></div>
+
+                <!-- Bespoke Multi-Layered Space Illustration SVG -->
+                <svg class="cosmic-illustration" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                    <defs>
+                        <radialGradient id="nebulaCore" cx="56%" cy="42%" r="58%">
+                            <stop offset="0%" stop-color="#4B2178" stop-opacity="0.95"/>
+                            <stop offset="48%" stop-color="#281147" stop-opacity="0.92"/>
+                            <stop offset="100%" stop-color="#130724" stop-opacity="1"/>
+                        </radialGradient>
+
+                        <linearGradient id="planetHorizon" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#7C44B8"/>
+                            <stop offset="50%" stop-color="#4A1F7A"/>
+                            <stop offset="100%" stop-color="#1E0B38"/>
+                        </linearGradient>
+
+                        <linearGradient id="planetRim" x1="0%" y1="0%" x2="85%" y2="40%">
+                            <stop offset="0%" stop-color="#B985F2"/>
+                            <stop offset="55%" stop-color="#6F37AD"/>
+                            <stop offset="100%" stop-color="#260F45"/>
+                        </linearGradient>
+
+                        <linearGradient id="helmetShell" x1="15%" y1="10%" x2="85%" y2="90%">
+                            <stop offset="0%" stop-color="#9A68D4"/>
+                            <stop offset="45%" stop-color="#6A38A3"/>
+                            <stop offset="100%" stop-color="#351759"/>
+                        </linearGradient>
+
+                        <linearGradient id="helmetShadow" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4A217A"/>
+                            <stop offset="100%" stop-color="#210C3B"/>
+                        </linearGradient>
+
+                        <linearGradient id="visorGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#291047"/>
+                            <stop offset="55%" stop-color="#3F1B6B"/>
+                            <stop offset="100%" stop-color="#19082E"/>
+                        </linearGradient>
+
+                        <linearGradient id="visorReflection" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#D7B5FC" stop-opacity="0.72"/>
+                            <stop offset="100%" stop-color="#9763D1" stop-opacity="0.22"/>
+                        </linearGradient>
+
+                        <linearGradient id="rockDark" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#2A1247"/>
+                            <stop offset="100%" stop-color="#120624"/>
+                        </linearGradient>
+
+                        <linearGradient id="rockMid" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#6D39A8"/>
+                            <stop offset="100%" stop-color="#2D124D"/>
+                        </linearGradient>
+
+                        <linearGradient id="acidCrystal" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#D6FF9E"/>
+                            <stop offset="55%" stop-color="#A8F56C"/>
+                            <stop offset="100%" stop-color="#69B837"/>
+                        </linearGradient>
+                    </defs>
+
+                    <rect width="1440" height="820" fill="url(#nebulaCore)"/>
+
+                    <!-- Architectural Orbital Telemetry Arcs -->
+                    <g opacity="0.24" stroke="#C8A5F0" fill="none">
+                        <ellipse cx="835" cy="365" rx="460" ry="195" transform="rotate(-14 835 365)" stroke-width="1"/>
+                        <ellipse cx="835" cy="365" rx="310" ry="130" transform="rotate(-14 835 365)" stroke-width="0.8" stroke-dasharray="4 6"/>
+                    </g>
+
+                    <!-- Distant Atmospheric Crags & Floating Debris (Background Layer) -->
+                    <g opacity="0.75">
+                        <polygon points="-20,250 75,265 118,340 82,425 -15,435" fill="url(#rockMid)" stroke="#18082B" stroke-width="2"/>
+                        <polygon points="35,295 85,315 72,375 20,360" fill="#2B114A"/>
+                        <polygon points="95,385 130,378 142,408 112,422" fill="#7D49BA"/>
+
+                        <polygon points="560,155 605,142 642,168 632,212 582,218 552,188" fill="url(#rockMid)" stroke="#170729" stroke-width="2"/>
+                        <polygon points="568,165 602,155 612,186 575,194" fill="#8C58C9" opacity="0.7"/>
+                        <polygon points="582,218 632,212 615,232 572,228" fill="#230D3D"/>
+
+                        <polygon points="445,205 478,198 485,212 452,220" fill="#C794FA"/>
+
+                        <polygon points="1290,235 1345,222 1378,255 1352,292 1302,282" fill="url(#rockDark)" stroke="#120521" stroke-width="2"/>
+                        <polygon points="1272,405 1305,392 1322,420 1292,438" fill="#63329C"/>
+                    </g>
+
+                    <!-- Top Dark Asteroid Cluster -->
+                    <g>
+                        <polygon points="755,22 835,8 898,48 885,112 812,128 748,92" fill="url(#rockDark)" stroke="#0E041C" stroke-width="2.5"/>
+                        <polygon points="768,38 825,26 845,68 785,82" fill="#351759" opacity="0.65"/>
+                        <polygon points="845,68 898,48 885,112 835,98" fill="#18082B"/>
+
+                        <polygon points="1235,35 1335,18 1405,72 1375,148 1282,158 1225,105" fill="url(#rockDark)" stroke="#0E041C" stroke-width="2.5"/>
+                        <polygon points="1255,52 1325,40 1345,92 1272,102" fill="#37185C" opacity="0.6"/>
+                    </g>
+
+                    <!-- FOCAL POINT: Stylized Futuristic Astronaut Helmet -->
+                    <g class="helmet-focal-group" transform="translate(865, 315)">
+                        <circle cx="0" cy="0" r="158" fill="#7D42C2" opacity="0.16"/>
+                        <circle cx="0" cy="0" r="134" fill="none" stroke="#C8A5F0" stroke-width="1" opacity="0.3"/>
+
+                        <path d="M -112,-18 C -116,-92 -62,-136 8,-136 C 78,-136 124,-88 120,-12 C 117,56 76,116 4,118 C -68,120 -108,58 -112,-18 Z"
+                              fill="url(#helmetShell)" stroke="#160729" stroke-width="3"/>
+
+                        <path d="M -52,-128 C -25,-138 35,-138 62,-124 L 48,-96 C 20,-104 -18,-104 -42,-96 Z"
+                              fill="#B080E8" stroke="#160729" stroke-width="2"/>
+                        <path d="M -112,-18 C -114,26 -96,72 -58,98 L -42,74 C -72,54 -84,18 -84,-18 Z"
+                              fill="url(#helmetShadow)" stroke="#160729" stroke-width="2"/>
+
+                        <rect x="-124" y="-34" width="24" height="68" rx="10" fill="#7C47B8" stroke="#160729" stroke-width="2.5"/>
+                        <rect x="-118" y="-20" width="10" height="40" rx="4" fill="#C99DFC"/>
+                        <rect x="102" y="-30" width="22" height="62" rx="9" fill="#461E75" stroke="#160729" stroke-width="2.5"/>
+
+                        <path d="M -76,86 C -42,114 44,114 78,84 L 66,108 C 32,130 -34,130 -66,108 Z"
+                              fill="#9B69D6" stroke="#160729" stroke-width="2.5"/>
+                        <path d="M -56,106 L 56,106 L 44,122 L -44,122 Z"
+                              fill="#2A1047" stroke="#160729" stroke-width="2"/>
+
+                        <path d="M -78,-42 C -78,-78 -38,-94 12,-94 C 62,-94 94,-74 94,-38 C 94,12 68,54 12,56 C -44,58 -78,16 -78,-42 Z"
+                              fill="#250E42" stroke="#160729" stroke-width="3"/>
+
+                        <path d="M -66,-38 C -66,-68 -32,-82 12,-82 C 56,-82 82,-64 82,-34 C 82,8 58,44 12,46 C -34,48 -66,12 -66,-38 Z"
+                              fill="url(#visorGlass)" stroke="#B785F2" stroke-width="1.5"/>
+
+                        <polygon points="-46,-68 -14,-74 28,36 -6,42" fill="url(#visorReflection)"/>
+                        <polygon points="2,-76 20,-75 56,24 40,30" fill="#E3C8FF" opacity="0.55"/>
+
+                        <circle cx="48" cy="-42" r="9" fill="none" stroke="#B5FF7D" stroke-width="1.2" opacity="0.75"/>
+                        <line x1="48" y1="-55" x2="48" y2="-48" stroke="#B5FF7D" stroke-width="1.2" opacity="0.75"/>
+                    </g>
+
+                    <!-- Foreground Planetary Crater Rim -->
+                    <g>
+                        <path d="M -60,465 C 180,455 445,545 635,840 L -60,840 Z"
+                              fill="url(#planetHorizon)" stroke="#160629" stroke-width="3"/>
+                        <path d="M -40,492 C 175,484 415,568 585,840 L 520,840 C 355,605 145,532 -40,540 Z"
+                              fill="url(#planetRim)" opacity="0.85"/>
+                        <path d="M -60,555 C 125,550 315,635 455,840 L -60,840 Z"
+                              fill="#260E45"/>
+
+                        <polygon points="365,595 452,568 525,618 518,708 425,738 352,678"
+                                 fill="url(#rockDark)" stroke="#0E041C" stroke-width="3"/>
+                        <polygon points="378,608 446,586 468,645 395,665" fill="#2E134F"/>
+                        <polygon points="468,645 525,618 518,708 455,695" fill="#140626"/>
+
+                        <path d="M 1015,840 C 1075,715 1235,620 1480,605 L 1480,840 Z"
+                              fill="url(#planetHorizon)" stroke="#160629" stroke-width="3"/>
+                        <path d="M 1075,840 C 1130,735 1265,655 1480,642 L 1480,840 Z"
+                              fill="#2A104A"/>
+                        <polygon points="1035,545 1112,518 1175,565 1152,638 1068,648 1022,598"
+                                 fill="url(#rockDark)" stroke="#0E041C" stroke-width="2.5"/>
+                        <polygon points="1048,556 1106,535 1122,585 1062,598" fill="#331657"/>
+                        <polygon points="1325,465 1410,445 1465,515 1435,615 1345,595 1310,525"
+                                 fill="url(#rockMid)" stroke="#160629" stroke-width="2.5"/>
+                    </g>
+
+                    <!-- Floating Geometric Prisms & Acid-Lime Data Minerals -->
+                    <g>
+                        <g transform="translate(175, 725)">
+                            <polygon points="0,-64 56,-32 56,32 0,64 -56,32 -56,-32"
+                                     fill="url(#acidCrystal)" stroke="#160629" stroke-width="2.5"/>
+                            <polygon points="0,-64 32,-18 0,18 -32,-18" fill="#E4FFB8" opacity="0.7"/>
+                            <polygon points="32,-18 56,-32 56,32 24,22 0,18" fill="#8CE051" opacity="0.65"/>
+                            <polygon points="-32,-18 0,18 -24,22 -56,32 -56,-32" fill="#B9FA82" opacity="0.5"/>
+                            <line x1="0" y1="18" x2="0" y2="64" stroke="#160629" stroke-width="1.8"/>
+                            <line x1="24" y1="22" x2="56" y2="32" stroke="#160629" stroke-width="1.8"/>
+                            <line x1="-24" y1="22" x2="-56" y2="32" stroke="#160629" stroke-width="1.8"/>
+                        </g>
+
+                        <g transform="translate(1115, 225) rotate(-18)">
+                            <polygon points="-24,-10 14,-16 26,-4 -12,2" fill="#E4FFB8" stroke="#160629" stroke-width="2"/>
+                            <polygon points="-24,-10 -12,2 -12,16 -24,4" fill="#89DB4F" stroke="#160629" stroke-width="2"/>
+                            <polygon points="-12,2 26,-4 26,10 -12,16" fill="#B5FF7D" stroke="#160629" stroke-width="2"/>
+                        </g>
+
+                        <g transform="translate(690, 275) rotate(22)">
+                            <polygon points="-8,-26 8,-26 12,22 -4,26" fill="#D5AEFF" stroke="#160629" stroke-width="2"/>
+                            <polygon points="0,-26 8,-26 12,22 2,24" fill="#9A66D6"/>
+                        </g>
+
+                        <g transform="translate(432, 465) rotate(-12)">
+                            <polygon points="-14,-22 10,-26 16,18 -8,24" fill="#C99DFC" stroke="#160629" stroke-width="2"/>
+                            <polygon points="2,-24 10,-26 16,18 6,20" fill="#8854C4"/>
+                        </g>
+
+                        <g transform="translate(1258, 495) rotate(-16)">
+                            <polygon points="-36,-8 32,-12 38,0 -30,4" fill="#E6CFFF" stroke="#160629" stroke-width="2"/>
+                            <polygon points="-30,4 38,0 36,12 -32,16" fill="#A36EE0" stroke="#160629" stroke-width="2"/>
+                        </g>
+                    </g>
+                </svg>
+
+                <!-- Editorial Swiss Typography & CTA Layer -->
+                <div class="hero-content-layer">
+                    <div class="hero-meta-bar">
+                        <span class="meta-code">SYS // 01</span>
+                        <span class="meta-divider"></span>
+                        <span class="meta-label">IDR TELEMETRY &amp; PERSONAL LEDGER</span>
                     </div>
+
+                    <h1 id="hero-heading" class="hero-title">
+                        Take Control of Your Money.<br>
+                        Navigate Your Financial Future.
+                    </h1>
+
+                    <div class="hero-cta-row">
+                        <a href="dashboard.html" class="btn-mission-cta">
+                            <span>Enter Your Dashboard</span>
+                            <span class="cta-icon-circle" aria-hidden="true">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#120722" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </a>
+                        <p class="hero-subnote">
+                            Real-time Rupiah tracking, weekly cashflow diagnostics, and Firebase-synced personal financial intelligence.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bottom Technical Coordinate Strip -->
+                <div class="hero-bottom-telemetry" aria-hidden="true">
+                    <span>LAT 06°12'S — LON 106°49'E</span>
+                    <span>CURRENCY STANDARD: IDR (Rp)</span>
+                    <span>SYNC: FIRESTORE REAL-TIME</span>
                 </div>
             </div>
         </section>
 
-        <section id="features" class="features-preview">
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>Pencatatan Presisi</h3>
-                    <p>Kelola pemasukan dan pengeluaran harian dengan kategorisasi standar mata uang Rupiah (IDR).</p>
+        <!-- EDITORIAL SWISS SPECIFICATION SECTION (Asymmetric 12-Column Grid) -->
+        <section id="features" class="editorial-section" aria-labelledby="features-heading">
+            <div class="section-grid-header">
+                <div class="section-index-col">
+                    <span class="mono-tag">[ INDEX — CAPABILITIES ]</span>
                 </div>
-                <div class="feature-card">
-                    <h3>Analisis Mingguan & Bulanan</h3>
-                    <p>Visualisasi tren keuangan mendalam menggunakan Chart.js berbasis data real-time Firestore.</p>
+                <div class="section-title-col">
+                    <h2 id="features-heading" class="editorial-heading">
+                        Engineered for financial clarity.<br>
+                        Stripped of interface noise.
+                    </h2>
                 </div>
-                <div class="feature-card">
-                    <h3>Arsitektur Ringan</h3>
-                    <p>Dibangun tanpa framework berat, memastikan performa instan dan kemudahan deployment statis.</p>
+            </div>
+
+            <div class="editorial-divider"></div>
+
+            <div class="editorial-feature-list">
+                <!-- Feature 01 -->
+                <article class="editorial-row">
+                    <div class="row-number">01</div>
+                    <div class="row-title-block">
+                        <span class="row-kicker">LEDGER ENGINE</span>
+                        <h3 class="row-title">FINANCIAL RECORDS</h3>
+                    </div>
+                    <div class="row-body">
+                        <p>
+                            Record daily income and expenses with strict Rupiah (IDR) formatting, structured category tagging, and instant search filtering across your entire transaction history.
+                        </p>
+                    </div>
+                    <div class="row-meta">
+                        <span class="spec-pill">IDR PRECISION</span>
+                    </div>
+                </article>
+
+                <div class="editorial-divider"></div>
+
+                <!-- Feature 02 -->
+                <article class="editorial-row">
+                    <div class="row-number">02</div>
+                    <div class="row-title-block">
+                        <span class="row-kicker">DIAGNOSTICS</span>
+                        <h3 class="row-title">WEEKLY &amp; MONTHLY ANALYSIS</h3>
+                    </div>
+                    <div class="row-body">
+                        <p>
+                            Inspect spending velocity, category distribution, and net cashflow trajectories through high-contrast Chart.js visualizations built for rapid weekly and monthly reviews.
+                        </p>
+                    </div>
+                    <div class="row-meta">
+                        <span class="spec-pill">CHART.JS TELEMETRY</span>
+                    </div>
+                </article>
+
+                <div class="editorial-divider"></div>
+
+                <!-- Feature 03 -->
+                <article class="editorial-row">
+                    <div class="row-number">03</div>
+                    <div class="row-title-block">
+                        <span class="row-kicker">CLOUD INFRASTRUCTURE</span>
+                        <h3 class="row-title">REAL-TIME DATA</h3>
+                    </div>
+                    <div class="row-body">
+                        <p>
+                            Authenticated via Firebase Auth and persisted in Cloud Firestore—keeping your personal balance sheet synchronized across desktop and mobile sessions with zero framework overhead.
+                        </p>
+                    </div>
+                  <div class="row-meta">
+                        <span class="spec-pill">FIREBASE SYNC</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ASYMMETRIC SYSTEM ARCHITECTURE & ACTION BAND -->
+        <section id="architecture" class="architecture-band" aria-labelledby="arch-heading">
+            <div class="arch-grid">
+                <div class="arch-left">
+                    <span class="mono-tag">[ SYSTEM ARCHITECTURE ]</span>
+                    <h2 id="arch-heading" class="arch-title">
+                        Swiss grid discipline meets deep-space telemetry.
+                    </h2>
+                </div>
+                <div class="arch-right">
+                    <p class="arch-copy">
+                        ORBIT pairs a zero-bloat vanilla ES module architecture with isolated per-user Firestore security rules. Sign in once to access your overview, ledger, weekly reports, and monthly analytics.
+                    </p>
+                    <div class="arch-specs">
+                        <div class="arch-spec-item">
+                            <span class="spec-label">AUTHENTICATION</span>
+                            <span class="spec-val">Firebase Email &amp; Password</span>
+                        </div>
+                        <div class="arch-spec-item">
+                            <span class="spec-label">DATA LAYER</span>
+                            <span class="spec-val">Cloud Firestore Real-Time</span>
+                        </div>
+                        <div class="arch-spec-item">
+                            <span class="spec-label">WORKSPACE MODULES</span>
+                            <span class="spec-val">5 Integrated Views</span>
+                        </div>
+                    </div>
+                    <div class="arch-cta-wrap">
+                        <a href="dashboard.html" class="btn-arch-launch">Launch ORBIT Workspace &rarr;</a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Editorial Footer -->
     <footer class="landing-footer">
-        <p>&copy; 2026 ORBIT. Swiss Design & Lightweight Architecture.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-name">ORBIT<span>.</span></span>
+                <span class="footer-sub">Personal Finance Management System</span>
+            </div>
+            <div class="footer-links">
+                <a href="dashboard.html">Overview</a>
+                <a href="transactions.html">Transactions</a>
+                <a href="reports.html">Weekly Report</a>
+                <a href="analytics.html">Monthly Analytics</a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 ORBIT. Engineered with Swiss Editorial Precision.
+            </div>
+        </div>
     </footer>
 </body>
 </html>
+      
