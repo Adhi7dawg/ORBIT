@@ -1,0 +1,23 @@
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px;
+    padding: 1rem 0.5rem;
+  }
+  .sidebar-brand h2, .version-tag, .nav-item span, .sidebar-footer {
+    display: none;
+  }
+  .main-content {
+    margin-left: 70px;
+    max-width: calc(100vw - 70px);
+    padding: 1.5rem 1rem;
+  }
+  .filter-group {
+    flex-direction: column;
+  }
+}
