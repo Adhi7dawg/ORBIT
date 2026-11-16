@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — ORBIT</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="app-body">
+    <div class="app-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>ORBIT<span>.</span></h2>
+                <span class="version-tag">v1.0.0</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item active">Overview</a>
+                <a href="transactions.html" class="nav-item">Transactions</a>
+                <a href="reports.html" class="nav-item">Weekly Report</a>
+                <a href="analytics.html" class="nav-item">Monthly Analytics</a>
+                <a href="settings.html" class="nav-item">Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <div id="user-email-display" class="user-email">Memuat akun...</div>
+                <button id="logout-btn" class="btn-logout">Keluar</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div>
+                    <h1>Financial Overview</h1>
+                    <p class="date-subtitle" id="current-date-display"></p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-swiss-primary" onclick="window.location.href='transactions.html'">+ Transaksi Baru</button>
+                </div>
+            </header>
+
+            <!-- Metrics Grid -->
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-label">Total Saldo</span>
+                    <h2 class="metric-value" id="total-balance">Rp0</h2>
+                    <span class="metric-trend positive">Aktif</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Pemasukan Bulan Ini</span>
+                    <h2 class="metric-value income" id="monthly-income">Rp0</h2>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Pengeluaran Bulan Ini</span>
+                    <h2 class="metric-value expense" id="monthly-expense">Rp0</h2>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Net Cash Flow</span>
+                    <h2 class="metric-value" id="net-cashflow">Rp0</h2>
+                </div>
+            </section>
+
+            <!-- Charts & Summary Grid -->
+            <section class="dashboard-grid">
+                <div class="card span-two">
+                    <div class="card-header">
+                        <h3>Pemasukan vs Pengeluaran Bulanan</h3>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="monthlyTrendChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Distribusi Pengeluaran</h3>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="expensePieChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Transactions Table -->
+            <section class="card full-width">
+                <div class="card-header flex-between">
+                    <h3>Transaksi Terbaru</h3>
+                    <a href="transactions.html" class="text-link">Lihat Semua →</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="swiss-table" id="recent-transactions-table">
+                        <thead>
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Kategori</th>
+                                <th>Deskripsi</th>
+                                <th>Tipe</th>
+                                <th>Jumlah</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recent-transactions-body">
+                            <tr>
+                                <td colspan="5" class="text-center">Memuat data transaksi...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Firebase SDK & App Scripts via ES Modules -->
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

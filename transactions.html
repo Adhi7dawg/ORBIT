@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions — ORBIT</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="app-body">
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>ORBIT<span>.</span></h2>
+                <span class="version-tag">v1.0.0</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">Overview</a>
+                <a href="transactions.html" class="nav-item active">Transactions</a>
+                <a href="reports.html" class="nav-item">Weekly Report</a>
+                <a href="analytics.html" class="nav-item">Monthly Analytics</a>
+                <a href="settings.html" class="nav-item">Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <div id="user-email-display" class="user-email">Memuat akun...</div>
+                <button id="logout-btn" class="btn-logout">Keluar</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <div>
+                    <h1>Manajemen Transaksi</h1>
+                    <p class="date-subtitle">Tambah, Ubah, Hapus, dan Filter catatan keuangan Anda.</p>
+                </div>
+                <button class="btn-swiss-primary" id="open-add-modal">+ Tambah Transaksi</button>
+            </header>
+
+            <!-- Filters Toolbar -->
+            <section class="card filter-toolbar">
+                <div class="filter-group">
+                    <input type="text" id="search-input" placeholder="Cari deskripsi..." class="swiss-input">
+                    <select id="filter-type" class="swiss-select">
+                        <option value="">Semua Tipe</option>
+                        <option value="income">Pemasukan</option>
+                        <option value="expense">Pengeluaran</option>
+                    </select>
+                    <select id="filter-category" class="swiss-select">
+                        <option value="">Semua Kategori</option>
+                        <option value="Allowance">Allowance</option>
+                        <option value="Salary">Salary</option>
+                        <option value="Freelance">Freelance</option>
+                        <option value="Other Income">Other Income</option>
+                        <option value="Food">Food</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Education">Education</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Savings">Savings</option>
+                        <option value="Other Expenses">Other Expenses</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Transactions Table -->
+            <section class="card full-width">
+                <div class="table-responsive">
+                    <table class="swiss-table">
+                        <thead>
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Kategori</th>
+                                <th>Deskripsi</th>
+                                <th>Tipe</th>
+                                <th>Jumlah</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactions-table-body">
+                            <tr>
+                                <td colspan="6" class="text-center">Memuat transaksi...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal Add/Edit Transaction -->
+    <div id="transaction-modal" class="swiss-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Tambah Transaksi</h3>
+                <button class="close-modal" id="close-modal-btn">&times;</button>
+            </div>
+            <form id="transaction-form">
+                <input type="hidden" id="transaction-id">
+                <div class="form-group">
+                    <label>Tipe Transaksi</label>
+                    <select id="tx-type" class="swiss-select" required>
+                        <option value="expense">Pengeluaran</option>
+                        <option value="income">Pemasukan</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Jumlah (IDR)</label>
+                    <input type="number" id="tx-amount" class="swiss-input" placeholder="Contoh: 150000" required min="1">
+                </div>
+                <div class="form-group">
+                    <label>Kategori</label>
+                    <select id="tx-category" class="swiss-select" required>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Deskripsi</label>
+                    <input type="text" id="tx-description" class="swiss-input" placeholder="Catatan transaksi..." required>
+                </div>
+                <div class="form-group">
+                    <label>Tanggal</label>
+                    <input type="date" id="tx-date" class="swiss-input" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-swiss-secondary" id="cancel-modal-btn">Batal</button>
+                    <button type="submit" class="btn-swiss-primary">Simpan Transaksi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="js/transactions.js"></script>
+</body>
+</html>
